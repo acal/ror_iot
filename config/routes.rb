@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  root :to => "pages#index"
+
+match "/server_post",               :to => "server_requests#server_post", :via => "post"
+match "/getreadings/:axis/:number", :to => "readings#getreadings",        :via => "get"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
